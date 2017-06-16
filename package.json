@@ -1,48 +1,38 @@
 {
   "name": "myview",
-  "version": "0.2.1",
-  "description": "A example project of iView2, with Vue.js2 and webpack2.",
-  "main": "index.js",
-  "scripts": {
-    "init": "webpack --progress --config webpack.dev.config.js",
-    "dev": "webpack-dev-server --content-base ./ --open --inline --hot --compress --history-api-fallback --config webpack.dev.config.js",
-    "build": "webpack --progress --hide-modules --config webpack.prod.config.js"
-  },
+  "version": "0.2.2",
+  "description": "A example project of iView2, build with rollup.",
+  "author": "Ryan Liu",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azhai/myview.git"
   },
-  "author": "Aresn",
-  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "cross-env NODE_ENV=development rollup -cw"
+  },
   "dependencies": {
-    "vue": "^2.2.6",
-    "iview": "^2.0.0-rc.8"
+    "axios": "^0.16.2",
+    "iview": "^2.0.0-rc.17",
+    "vue": "^2.3.4",
+    "vue-axios": "^2.0.2"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^2.0.0",
-    "babel": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-runtime": "^6.12.0",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-runtime": "^6.11.6",
-    "css-loader": "^0.23.1",
-    "extract-text-webpack-plugin": "^2.0.0",
-    "file-loader": "^0.8.5",
-    "html-loader": "^0.3.0",
-    "html-webpack-plugin": "^2.28.0",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "vue-hot-reload-api": "^1.3.3",
-    "vue-html-loader": "^1.2.3",
-    "vue-loader": "^11.0.0",
-    "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.2.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1",
-    "webpack-merge": "^3.0.0",
-    "copy-webpack-plugin": "^1.1.0"
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "cross-env": "^5.0.1",
+    "rollup": "^0.42.0",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-css-only": "^0.2.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-less": "^0.1.3",
+    "rollup-plugin-livereload": "^0.4.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-serve": "^0.3.0",
+    "rollup-plugin-string": "^2.0.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-vue2": "^0.8.0",
+    "rollup-watch": "^4.0.0"
   }
 }
