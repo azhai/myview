@@ -13,9 +13,6 @@ import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
 
 const config = {
-    entry: 'src/main.js',
-    dest: 'dist/assets/js/bundle.min.js',
-    format: 'iife',
     sourceMap: false,
     useStrict: false,
     plugins: [
@@ -54,4 +51,15 @@ if (process.env.NODE_ENV === 'development') {
     }))
 }
 
-export default config
+export default [
+    Object.assign({}, config, {
+        entry: 'src/bundle.js',
+        format: 'iife',
+        dest: 'dist/assets/js/bundle.min.js',
+    }),
+    Object.assign({}, config, {
+        entry: 'src/app.js',
+        format: 'iife',
+        dest: 'dist/assets/js/app.js',
+    })
+]
