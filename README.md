@@ -1,6 +1,6 @@
 # myview
 
-一个 iView 2 的例子, 用到了 Vue.js2 和 webpack2 。
+一个 iView 2 的例子, 使用 rollup 编译打包。
 
 ## Install
 ```bash
