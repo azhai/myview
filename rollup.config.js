@@ -8,7 +8,7 @@ import css from 'rollup-plugin-css-only'
 import buble from 'rollup-plugin-buble'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-//import uglify from 'rollup-plugin-uglify'
+import uglify from 'rollup-plugin-uglify'
 import livereload from 'rollup-plugin-livereload'
 import serve from 'rollup-plugin-serve'
 
@@ -38,7 +38,9 @@ const config = {
 
 if (process.env.NODE_ENV === 'production') {
     config.sourceMap = false
-    //config.plugins.push(uglify())
+    config.plugins.push(uglify({ 
+        mangle: { reserved: ['vue', 'vue$1'] }
+    }))
 }
 
 if (process.env.NODE_ENV === 'development') {
